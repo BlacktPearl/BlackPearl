@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PearlAi - The Ultimate Academic Assistant for NPU</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="myVideo">
+            <source src="./images/hayaloop.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <div class="loading-screen" style="display: none;">
+        <div class="loader"></div>
+        <div class="loader-text">Welcome to PearlAI Story</div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">PearlAi</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#journey">Journey</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#demo">Demo</a>
+            <a href="#team">Team</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-right">
+            <h1>PearlAi</h1>
+            <p class="subtitle">The Ultimate Academic Assistant for NPU</p>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <span>AI-powered assistance</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 availability</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-university"></i>
+                    <span>NPU-specific support</span>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="https://pearlai.duckdns.org" class="cta-button" target="_blank">Try PearlAi Now</a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left">
+            <div class="ai-animation">
+                <div class="pulse-ring"></div>
+                <div class="pulse-ring delay-1"></div>
+                <div class="pulse-ring delay-2"></div>
+                <div class="ai-core"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Core Features</h2>
+            <div class="underline"></div>
+            <p class="section-subtitle">Designed with precision for the NPU community</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-brain"></i>
+                <h3>AI-Powered Assistance</h3>
+                <p>Specialized in NPU academics, visa guidance, and campus life support with Qwen-2.5-32b model for human-like understanding.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-database"></i>
+                <h3>RAG Technology</h3>
+                <p>Combines AI with real university documents using FAISS for lightning-fast retrieval and MiniLM-L6-v2 embeddings for semantic understanding.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-clock"></i>
+                <h3>Real-time Streaming</h3>
+                <p>Experience fluid, sentence-by-sentence response generation with optimized threading for smooth interaction even on high-latency connections.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure & Efficient</h3>
+                <p>Advanced rate-limiting and conversation tracking with automatic API key rotation and robust error handling for 24/7 reliability.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="journey-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Our Development Journey</h2>
+            <div class="underline"></div>
+            <p class="section-subtitle">From concept to creation: the story behind PearlAi</p>
+        </div>
+        
+        <div class="journey-story" data-aos="fade-up">
+            <p class="journey-intro">Creating PearlAi wasn't just a technical challenge—it was a labor of love born from our own struggles as international students at NPU.</p>
+        </div>
+        
+        <div class="development-phases">
+            <div class="phase-block" data-aos="fade-up">
+                <div class="phase-header">
+                    <span class="phase-date">Sept 2023</span>
+                    <h3>The Inspiration Phase</h3>
+                </div>
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <p>As international students, we faced daily challenges navigating NPU's systems. Information was scattered across multiple platforms, often only in Chinese. The frustration of seeing fellow students struggle with the same issues sparked an idea: what if we could create an AI assistant specifically for NPU?</p>
+                        <ul class="phase-details">
+                            <li>Gathered feedback from fellow international students</li>
+                            <li>Documented common challenges and pain points</li>
+                            <li>Researched existing solutions and their limitations</li>
+                        </ul>
+                    </div>
+                    <div class="phase-image" data-aos="fade-left">
+                        <img src="images/hanaandme.png" alt="Initial pearl model experiments">
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-block" data-aos="fade-up">
+                <div class="phase-header">
+                    <span class="phase-date">July-Aug 2024</span>
+                    <h3>Initial Model Experiments</h3>
+                </div>
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <p>Our journey began with testing different language models, each presenting unique challenges:</p>
+                        <ul class="phase-details">
+                            <li>First attempt: Mistral 7B - Promising but resource-intensive</li>
+                            <li>Second try: DeepSeek - Good performance but not optimal</li>
+                            <li>Final choice: Qwen - Perfect balance of capabilities and efficiency</li>
+                            <li>Many late nights debugging and optimizing prompts</li>
+                        </ul>
+                    </div>
+                    <div class="phase-image" data-aos="fade-left">
+                        <img src="./images/pearl1.jpg" alt="Initial pearl model experiments">
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-block" data-aos="fade-up">
+                <div class="phase-header">
+                    <span class="phase-date">September-November 2024</span>
+                    <h3>The Development Challenge</h3>
+                </div>
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <p>Working with limited resources, we faced significant technical challenges that required creative solutions:</p>
+                        <ul class="phase-details">
+                            <li>Utilized Google Colab for model training</li>
+                            <li>Dealt with frequent runtime disconnections</li>
+                            <li>Struggled with long training times and session limits</li>
+                            <li>Developed workarounds for memory constraints</li>
+                        </ul>
+                    </div>
+                    <div class="phase-image" data-aos="fade-left">
+                        <img src="images/pearll.jpg" alt="Pearl development process">
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-block" data-aos="fade-up">
+                <div class="phase-header">
+                    <span class="phase-date">December 2024-January 2025</span>
+                    <h3>The Breakthrough</h3>
+                </div>
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <p>After months of trials, we finally found our solution:</p>
+                        <ul class="phase-details">
+                            <li>Discovered Qwen model - perfect balance of performance and efficiency</li>
+                            <li>Successfully implemented RAG system</li>
+                            <li>Overcame context length limitations</li>
+                            <li>Achieved significant improvements in response quality</li>
+                        </ul>
+                    </div>
+                    <div class="phase-image" data-aos="fade-left">
+                        <img src="images/pearl4.jpg" alt="Breakthrough moment"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-block" data-aos="fade-up">
+                <div class="phase-header">
+                    <span class="phase-date">February 2025</span>
+                    <h3>Fine-tuning & Optimization</h3>
+                </div>
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <p>The final stretch involved polishing and perfecting:</p>
+                        <ul class="phase-details">
+                            <li>Refined prompt engineering for better accuracy</li>
+                            <li>Improved response time and reliability</li>
+                            <li>Enhanced context understanding for NPU-specific queries</li>
+                            <li>Countless hours of testing and adjusting</li>
+                        </ul>
+                    </div>
+                    <div class="phase-image" data-aos="fade-left">
+                        <img src="images/pearl3.jpg" alt="Fine-tuning phase">
+                        <span class="image-caption">Fine-tuning session in progress</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-block" data-aos="fade-up">
+                <div class="phase-header">
+                    <span class="phase-date">March 2025</span>
+                    <h3>Testing Phase</h3>
+                </div>
+                <div class="phase-content">
+                    <div class="phase-text">
+                        <p>Currently in testing phase with promising results:</p>
+                        <ul class="phase-details">
+                            <li>Positive feedback from initial student testers</li>
+                            <li>Continuous improvements and refinements</li>
+                            <li>We welcome feedback to make PearlAi even better</li>
+                        </ul>
+                    </div>
+                    <div class="phase-image" data-aos="fade-left">
+                        <img src="images/pearl2.jpg" alt="Testing phase">
+                        <span class="image-caption">Testing session with students</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="architecture-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Technical Architecture</h2>
+            <div class="underline"></div>
+            <p class="section-subtitle">The engineering behind the experience</p>
+        </div>
+        
+        <div class="architecture-diagram" data-aos="zoom-in">
+            <div class="arch-component user">
+                <i class="fas fa-user"></i>
+                <span>User</span>
+            </div>
+            <div class="arch-arrow right"></div>
+            <div class="arch-component frontend">
+                <i class="fas fa-desktop"></i>
+                <span>Frontend</span>
+            </div>
+            <div class="arch-arrow right"></div>
+            <div class="arch-component backend">
+                <i class="fas fa-server"></i>
+                <span>Flask Backend</span>
+            </div>
+            <div class="arch-arrow down"></div>
+            <div class="arch-component vector-db">
+                <i class="fas fa-database"></i>
+                <span>FAISS Vector DB</span>
+            </div>
+            <div class="arch-arrow left"></div>
+            <div class="arch-component llm">
+                <i class="fas fa-brain"></i>
+                <span>Qwen-2.5-32b LLM</span>
+            </div>
+            <div class="arch-arrow up"></div>
+            <div class="arch-component response">
+                <i class="fas fa-comment-dots"></i>
+                <span>Response Generation</span>
+            </div>
+        </div>
+        
+        <div class="tech-stack" data-aos="fade-up">
+            <h3>Technology Stack</h3>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-flask"></i>
+                    <span>Flask</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-link"></i>
+                    <span>Langchain</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-search"></i>
+                    <span>FAISS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-microchip"></i>
+                    <span>HuggingFace</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Groq API</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML5/CSS3</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="performance-metrics" data-aos="fade-up">
+            <h3>Performance Metrics</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">1.8s</div>
+                    <div class="metric-label">Average Response Time</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">95%</div>
+                    <div class="metric-label">Accuracy Rate</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3000+</div>
+                    <div class="metric-label">Concurrent Users</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">99.9%</div>
+                    <div class="metric-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="try-pearlai" class="try-pearlai-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Try PearlAi</h2>
+            <div class="underline"></div>
+            <p class="section-subtitle">Experience the actual PearlAi assistant</p>
+        </div>
+        <div class="cta-container" data-aos="fade-up">
+            <a href="https://pearlai.duckdns.org" class="cta-button">Visit PearlAi Website</a>
+        </div>
+    </section>
+
+    <section id="infrastructure" class="infrastructure-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Infrastructure</h2>
+            <div class="underline"></div>
+            <p class="section-subtitle">The technology powering PearlAi</p>
+        </div>
+
+        <div class="server-details" data-aos="fade-up">
+            <div class="server-specs">
+                <h3>Server Specifications</h3>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <i class="fas fa-microchip"></i>
+                        <h4>Computing Power</h4>
+                        <p>2 vCPUs, 4 GiB RAM</p>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-server"></i>
+                        <h4>Instance Type</h4>
+                        <p>ecs.e-c1m2.large</p>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-hdd"></i>
+                        <h4>Storage</h4>
+                        <p>40 GiB ESSD</p>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-network-wired"></i>
+                        <h4>Bandwidth</h4>
+                        <p>100 Mbps (Pay-By-Traffic)</p>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-linux"></i>
+                        <h4>Operating System</h4>
+                        <p>Alibaba Cloud Linux 3.2104 LTS (64-bit)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="server-benefits" data-aos="fade-up">
+                <h3>Why This Configuration?</h3>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <i class="fas fa-bolt"></i>
+                        <p>Optimized for AI API Integration – Handles AI workloads efficiently with Qwen API & Groq</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-piggy-bank"></i>
+                        <p>Cost-Effective – Significant savings with long-term subscription plans</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-arrows-alt-v"></i>
+                        <p>Scalable – Suitable for moderate AI traffic, with upgrade flexibility</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Reliable Performance – Stable cloud infrastructure for AI applications</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="server-costs" data-aos="fade-up">
+                <h3>Cost Optimization</h3>
+                <div class="costs-grid">
+                    <div class="cost-item">
+                        <h4>Pay-as-you-go</h4>
+                        <p>Flexible payment option</p>
+                        <span class="cost-badge">Available</span>
+                    </div>
+                    <div class="cost-item highlight">
+                        <h4>5 Years Plan</h4>
+                        <p>¥3007.39</p>
+                        <span class="savings-badge">Save ¥4641.52</span>
+                    </div>
+                    <div class="cost-item">
+                        <h4>1 Year Plan</h4>
+                        <p>¥1250.31</p>
+                        <span class="savings-badge">Save ¥279.47</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Meet the Creators</h2>
+            <div class="underline"></div>
+            <p class="section-subtitle">The minds behind PearlAi</p>
+            <div class="github-links" data-aos="fade-up">
+                <a href="https://github.com/bla999ckt" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> @blackt
+                </a>
+                <a href="https://github.com/hinoko77" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i> @Hinoko77
+                </a>
+            </div>
+        </div>
+        <div class="team-container">
+            <div class="team-member" data-aos="fade-up">
+                <div class="member-image">
+                    <img src="images/havatar.jpg" alt="Hana Kouiriti">
+                    <div class="social-links">
+                        <a href="https://github.com/bla999ckt" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Hana Kouiriti (@blackt)</h3>
+                <p class="member-quote">"Every limitation became an opportunity to innovate."</p>
+            </div>
+            <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-image">
+                    <img src="images/yavatar.jpg" alt="Yasmine Ait Haddou">
+                    <div class="social-links">
+                        <a href="https://github.com/hinoko77" target="_blank" class="github"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Yasmine Ait Haddou (@Hinoko77)</h3>
+                <p class="member-quote">"We built the tool we wished we had when we first arrived."</p>
+            </div>
+        </div>
+        
+        <div class="team-story" data-aos="fade-up">
+            <h3>Our Story</h3>
+            <p>We met during our first semester at NPU, both struggling with the same challenges of navigating a new academic system in a foreign country. What began as a mutual frustration evolved into a shared vision: to create a tool that would make life easier for every international student who followed in our footsteps.</p>
+            <p>Nights of coding turned into weeks, and weeks into months. We balanced our studies with development, often working until dawn to solve particularly challenging problems. When faced with computational limitations, we utilized free resources like Google Colab and optimized our code to work efficiently with the tools available to us.</p>
+            <p>Today, PearlAi represents not just a technical achievement, but a testament to what determination and friendship can accomplish. We're proud to share it with the NPU community and continue improving it based on your feedback.</p>
+        </div>
+    </section>
+
+    <section id="future" class="future-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>The Road Ahead</h2>
+            <div class="underline"></div>
+            <p class="section-subtitle">Our vision for PearlAi's future</p>
+        </div>
+        
+        <div class="roadmap" data-aos="fade-up">
+            <div class="roadmap-item">
+                <div class="roadmap-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="roadmap-content">
+                    <h3>Mobile Application</h3>
+                    <p>Native apps for iOS and Android to provide on-the-go assistance for NPU students</p>
+                    <div class="roadmap-timeline">Q3 2025</div>
+                </div>
+            </div>
+            
+            <div class="roadmap-item">
+                <div class="roadmap-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <div class="roadmap-content">
+                    <h3>Voice Interface</h3>
+                    <p>Speak directly to PearlAi for hands-free assistance in multiple languages</p>
+                    <div class="roadmap-timeline">Q4 2025</div>
+                </div>
+            </div>
+            
+            <div class="roadmap-item">
+                <div class="roadmap-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <div class="roadmap-content">
+                    <h3>Integrating Maps </h3>
+                    <p> integrating smart maps that will guide students around campus and important places in Xi'an. </p>
+                    <div class="roadmap-timeline">Q1 2025</div>
+                </div>
+            </div>
+            
+            <div class="roadmap-item">
+                <div class="roadmap-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="roadmap-content">
+                    <h3>NPU Integration</h3>
+                    <p>Direct integration with NPU's official systems for personalized schedules and notifications</p>
+                    <div class="roadmap-timeline">Q2 2025</div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">PearlAi</div>
+            <p>Revolutionizing student support at Northwestern Polytechnical University</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#features">Features</a>
+                <a href="#journey">Journey</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#demo">Demo</a>
+                <a href="#team">Team</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PearlAi. All rights reserved.</p>
+            <p class="made-with">Made with <i class="fas fa-heart"></i> in Xi'an, China</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
